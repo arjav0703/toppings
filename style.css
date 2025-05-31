@@ -1,146 +1,205 @@
 body {
     margin: 0;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #ff512f, #dd2476);
-    color: #fff;
+    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #333;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
+    line-height: 1.6;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .container {
-    background: rgba(0, 0, 0, 0.7);
-    border-radius: 15px;
-    max-width: 1100px;
-    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    max-width: 1200px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0 10px 40px rgba(221, 36, 118, 0.6);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    width: 100%;
 }
 
 h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 8px #dd2476;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #1a2a6c;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 p.subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 35px;
-    color: #ffb3c6;
-    font-weight: 600;
-    letter-spacing: 1.5px;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #555;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-align: center;
+    max-width: 600px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 25px;
     width: 100%;
 }
 
 .card {
-    background: #222;
-    border-radius: 15px;
+    background: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(255, 81, 47, 0.4);
-    transition: transform 0.3s ease;
-    cursor: default;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 20px;
+    border: 1px solid #eee;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(255, 81, 47, 0.7);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .card img {
     width: 100%;
-    height: auto;
-    max-height: 200px;
+    height: 200px;
     object-fit: contain;
-    background: linear-gradient(45deg, #ff512f, #dd2476);
+    background: linear-gradient(45deg, #f5f7fa, #e6e9f0);
     padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.card:hover img {
+    transform: scale(1.05);
 }
 
 .card h2 {
-    margin: 15px 0 8px;
-    font-size: 1.5rem;
+    margin: 18px 0 8px;
+    font-size: 1.4rem;
     text-align: center;
+    color: #1a2a6c;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+    border-radius: 3px;
 }
 
 .card p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-align: center;
-    color: #ffb3c6;
-    margin: 0 15px;
+    color: #555;
+    margin: 0 15px 20px;
+    line-height: 1.5;
 }
 
 .lightning {
-    animation: glowPulse 3s ease-in-out infinite;
-    box-shadow:
-        0 0 12px rgba(255, 255, 255, 0.9),
-        0 0 20px #ff3d00,
-        0 0 30px #ff3d00,
-        0 0 40px #ff512f;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(26, 42, 108, 0.2);
+    border-top: 5px solid transparent;
+    border-image: linear-gradient(90deg, #1a2a6c, #b21f1f, #fdbb2d);
+    border-image-slice: 1;
 }
 
-@keyframes glowPulse {
-    0%,
-    100% {
-        box-shadow:
-            0 0 12px rgba(255, 255, 255, 0.9),
-            0 0 20px #ff3d00,
-            0 0 30px #ff3d00,
-            0 0 40px #ff512f;
-        transform: translateX(0);
-    }
-    50% {
-        box-shadow:
-            0 0 20px rgba(255, 255, 255, 1),
-            0 0 30px #ff6a42,
-            0 0 40px #ff6a42,
-            0 0 50px #ff7a52;
-        transform: translateX(10px);
+.lightning::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #1a2a6c, #b21f1f, #fdbb2d);
+    opacity: 0.7;
+}
+
+@media (max-width: 992px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    p.subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}
+
+footer {
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 25px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #777;
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 576px) {
     .grid {
         grid-template-columns: 1fr;
     }
+    
     .card {
-        max-width: 360px;
+        max-width: 320px;
         margin-left: auto;
         margin-right: auto;
-        border-radius: 30px;
-        background: linear-gradient(135deg, #dd2476, #ff512f);
-        box-shadow: 0 10px 25px rgba(255, 81, 47, 0.6);
     }
-    .card:hover {
-        transform: none;
-        box-shadow: 0 10px 40px rgba(255, 200, 200, 0.9);
-    }
+    
     .card img {
-        padding: 10px;
-        border-radius: 50%;
-        background: #fff0f2;
-        object-fit: cover;
-        max-height: 180px;
+        height: 180px;
     }
-    h1 {
-        font-size: 2.2rem;
-        text-align: center;
+    
+    .container {
+        padding: 20px;
     }
-    p.subtitle {
-        font-size: 1.1rem;
-        text-align: center;
-        margin-bottom: 25px;
+    
+    footer {
+        margin-top: 35px;
+        padding-top: 15px;
     }
 }
