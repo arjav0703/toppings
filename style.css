@@ -1,9 +1,12 @@
 body {
     margin: 0;
-    font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    font-family:
+        "Inter",
+        "Segoe UI",
+        -apple-system,
+        BlinkMacSystemFont,
+        sans-serif;
+    background: #f5f7fa;
     color: #333;
     min-height: 100vh;
     display: flex;
@@ -14,9 +17,15 @@ body {
 }
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -41,7 +50,7 @@ h1 {
 
 p.subtitle {
     font-size: 1.2rem;
-    margin-bottom: 40px;
+    margin: 0 auto 40px;
     color: #555;
     font-weight: 400;
     letter-spacing: 0.5px;
@@ -99,7 +108,7 @@ p.subtitle {
 }
 
 .card h2::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -127,7 +136,7 @@ p.subtitle {
 }
 
 .lightning::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -147,12 +156,12 @@ p.subtitle {
     .container {
         padding: 25px;
     }
-    
+
     h1 {
         font-size: 2rem;
         text-align: center;
     }
-    
+
     p.subtitle {
         font-size: 1rem;
         margin-bottom: 30px;
@@ -183,21 +192,21 @@ header {
     .grid {
         grid-template-columns: 1fr;
     }
-    
+
     .card {
         max-width: 320px;
         margin-left: auto;
         margin-right: auto;
     }
-    
+
     .card img {
         height: 180px;
     }
-    
+
     .container {
         padding: 20px;
     }
-    
+
     footer {
         margin-top: 35px;
         padding-top: 15px;
